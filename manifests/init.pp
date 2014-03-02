@@ -3,9 +3,11 @@
 # Examples
 #
 #   include appcleaner
-class appcleaner {
-  package { 'AppCleaner':
+class appcleaner($version='2.2.3') {
+
+  package { "AppCleaner-${version}":
     provider => 'compressed_app',
-    source   => 'http://www.freemacsoft.net/downloads/AppCleaner_2.1.zip',
+    source   => "http://www.freemacsoft.net/downloads/AppCleaner_${version}.zip",
   }
+
 }
